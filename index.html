@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formação 2W — WebGIS e WebApps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <img src="logo-f2w.png" alt="Formação 2W Logo" style="height: 44px; width: auto;" />
+      </div>
+      <div class="nav-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#modulos">Módulos</a>
+        <a href="#extras">Extras</a>
+        <a href="https://api.whatsapp.com/send?phone=5521988374133&text=Quero%20ser%20atendido(a)%20pela%20equipe%20Ambiental%20Pro" target="_blank" class="nav-cta">Inscrever-se</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════
+       HERO SECTION
+  ═══════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <canvas id="mapCanvas"></canvas>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="logo-area">
+        <div class="logo-badge">
+          <svg class="globe-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="36" stroke="#00c8b4" stroke-width="2" opacity="0.9"/>
+            <ellipse cx="40" cy="40" rx="18" ry="36" stroke="#00c8b4" stroke-width="1.5" opacity="0.7"/>
+            <line x1="4" y1="40" x2="76" y2="40" stroke="#00c8b4" stroke-width="1.5" opacity="0.7"/>
+            <path d="M 10 24 Q 40 30 70 24" stroke="#00c8b4" stroke-width="1" opacity="0.5" fill="none"/>
+            <path d="M 10 56 Q 40 50 70 56" stroke="#00c8b4" stroke-width="1" opacity="0.5" fill="none"/>
+            <path d="M 18 14 Q 40 18 62 14" stroke="#00c8b4" stroke-width="1" opacity="0.4" fill="none"/>
+            <path d="M 18 66 Q 40 62 62 66" stroke="#00c8b4" stroke-width="1" opacity="0.4" fill="none"/>
+            <circle cx="40" cy="40" r="4" fill="#4ade80" opacity="0.9"/>
+            <circle cx="40" cy="40" r="8" stroke="#4ade80" stroke-width="1" opacity="0.4" fill="none"/>
+          </svg>
+          <div class="logo-text-group">
+            <span class="logo-formacao">FORMAÇÃO</span>
+            <span class="logo-2w">2W</span>
+          </div>
+        </div>
+        <p class="logo-subtitle">( WEBGIS &amp; WEBAPPS )</p>
+      </div>
+
+      <p class="hero-tagline">Do dado geoespacial à aplicação web — do zero ao deploy.</p>
+
+      <div class="hero-cta-group">
+        <a href="#modulos" class="btn-primary">Ver Módulos</a>
+        <a href="#ementa" class="btn-outline">Baixar Ementa</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">6+</span>
+          <span class="stat-label">Módulos</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">100+</span>
+          <span class="stat-label">Aulas</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">Lives</span>
+          <span class="stat-label">Gravadas</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">Deploy</span>
+          <span class="stat-label">Real</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gradient-bar"></div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       INTRO SECTION
+  ═══════════════════════════════════════════════ -->
+  <section class="intro-section" id="sobre">
+    <div class="container">
+      <div class="section-tag">SOBRE A FORMAÇÃO</div>
+      <h2 class="section-title">Uma jornada completa no universo <span class="highlight-cyan">WebGIS</span> e <span class="highlight-green">WebApps</span></h2>
+      <p class="section-desc">
+        A Formação 2W foi desenhada para profissionais e estudantes que querem dominar o desenvolvimento de aplicações geoespaciais modernas — desde a configuração do ambiente até o deploy em produção, passando por bancos de dados espaciais, APIs, containers e visualização interativa.
+      </p>
+      <div class="tech-pills">
+        <span class="pill">Python</span>
+        <span class="pill">PostgreSQL / PostGIS</span>
+        <span class="pill">GeoServer</span>
+        <span class="pill">Docker</span>
+        <span class="pill">Leaflet.js</span>
+        <span class="pill">OpenLayers</span>
+        <span class="pill">Flask / Django</span>
+        <span class="pill">Plotly / Dash</span>
+        <span class="pill">Google Earth Engine</span>
+        <span class="pill">GitHub Pages</span>
+        <span class="pill">HTML / CSS / JS</span>
+        <span class="pill">Streamlit</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       MODULES SECTION
+  ═══════════════════════════════════════════════ -->
+  <section class="modules-section" id="modulos">
+    <div class="container">
+      <div class="section-tag">GRADE CURRICULAR</div>
+      <h2 class="section-title">Módulos da <span class="highlight-cyan">Formação</span></h2>
+
+      <div class="modules-grid">
+
+        <!-- MÓDULO INTRO -->
+        <div class="module-card module-featured">
+          <div class="card-accent-bar"></div>
+          <div class="card-header">
+            <div class="module-number">INTRO</div>
+            <h3 class="module-title">Construindo seu Primeiro WebGIS</h3>
+            <p class="module-desc">Mergulhe direto na prática com Vibe Coding e construa seu primeiro WebGIS funcional do zero.</p>
+          </div>
+          <ul class="topic-list">
+            <li>Introdução ao Vibe Coding</li>
+            <li>Estrutura básica de um WebGIS</li>
+            <li>Download e importação dos dados</li>
+            <li>Interface e primeiros passos no Cursor</li>
+            <li>Inclusão de camadas vetoriais</li>
+            <li>Melhorando a visualização interativa</li>
+            <li>Alterando a simbologia das camadas</li>
+            <li>Disponibilização via GitHub Pages</li>
+          </ul>
+        </div>
+
+        <!-- MÓDULO 1 -->
+        <div class="module-card">
+          <div class="card-accent-bar"></div>
+          <div class="card-header">
+            <div class="module-number">01</div>
+            <h3 class="module-title">Introdução ao Universo WebGIS</h3>
+            <p class="module-desc">Fundamentos teóricos e configuração completa do ambiente de desenvolvimento.</p>
+          </div>
+          <ul class="topic-list">
+            <li>Apresentação e visão geral</li>
+            <li>Visualização de exemplo (Mapbiomas)</li>
+            <li>Download e instalação das ferramentas</li>
+            <li>Configuração do ambiente de trabalho</li>
+          </ul>
+        </div>
+
+        <!-- MÓDULO 2 -->
+        <div class="module-card">
+          <div class="card-accent-bar"></div>
+          <div class="card-header">
+            <div class="module-number">02</div>
+            <h3 class="module-title">O Início da Prática</h3>
+            <p class="module-desc">Primeiros projetos reais — mapas interativos, gráficos e publicação na nuvem.</p>
+          </div>
+          <ul class="topic-list">
+            <li>Primeiros passos e adicionando bases</li>
+            <li>Mapa e processamento geoespacial</li>
+            <li>Trabalhando com Rasters</li>
+            <li>Gráfico interativo integrado</li>
+            <li>Subindo para a nuvem</li>
+          </ul>
+        </div>
+
+        <!-- MÓDULO 3 -->
+        <div class="module-card">
+          <div class="card-accent-bar"></div>
+          <div class="card-header">
+            <div class="module-number">03</div>
+            <h3 class="module-title">Fundamentos de Bancos de Dados Geoespaciais</h3>
+            <p class="module-desc">PostgreSQL + PostGIS do zero: criação, inserção, operações espaciais e deploy na nuvem.</p>
+          </div>
+          <ul class="topic-list">
+            <li>Conceitos iniciais e instalação</li>
+            <li>Criação de tabelas e inserção de dados</li>
+            <li>Operações e índices espaciais</li>
+            <li>Inserção via terminal e Python</li>
+            <li>Rasters no banco de dados</li>
+            <li>Deploy no Render e Amazon</li>
+            <li>Controle de acesso e segurança</li>
+            <li>Revisão de arquitetura</li>
+          </ul>
+        </div>
+
+        <!-- MÓDULO 4 -->
+        <div class="module-card">
+          <div class="card-accent-bar"></div>
+          <div class="card-header">
+            <div class="module-number">04</div>
+            <h3 class="module-title">Containers e APIs Geo</h3>
+            <p class="module-desc">Docker, GeoServer, Postman e publicação de APIs geoespaciais em produção.</p>
+          </div>
+          <ul class="topic-list">
+            <li>Integração WebGIS com Banco de Dados</li>
+            <li>Otimização de consultas espaciais</li>
+            <li>Docker e Postman na prática</li>
+            <li>GeoServer: publicação e permissões</li>
+            <li>PGFeatureServer vs. GeoServer</li>
+            <li>Publicação de APIs online</li>
+            <li>Deploy no Render (pgfeatureserver)</li>
+            <li>Planilha de custos do projeto</li>
+          </ul>
+        </div>
+
+        <!-- MÓDULO 5 -->
+        <div class="module-card">
+          <div class="card-accent-bar"></div>
+          <div class="card-header">
+            <div class="module-number">05</div>
+            <h3 class="module-title">Introdução ao HTML, CSS e Javascript</h3>
+            <p class="module-desc">Front-end do zero para WebGIS — estrutura, estilo, interatividade e integração com Leaflet.</p>
+          </div>
+          <ul class="topic-list">
+            <li>Extensões e ambiente de desenvolvimento</li>
+            <li>HTML estrutural</li>
+            <li>CSS e Flexbox</li>
+            <li>Fundamentos de Javascript</li>
+            <li>Javascript + Leaflet integrado</li>
+            <li>Retoques e refinamentos</li>
+          </ul>
+        </div>
+
+        <!-- MÓDULO 6 -->
+        <div class="module-card">
+          <div class="card-accent-bar"></div>
+          <div class="card-header">
+            <div class="module-number">06</div>
+            <h3 class="module-title">Criando a interface com Cursor e React</h3>
+            <p class="module-desc">Aprenda a construir interfaces modernas e interativas utilizando ferramentas de inteligência artificial com o Cursor.</p>
+          </div>
+          <ul class="topic-list">
+            <li>Construindo seu primeiro WebGIS</li>
+            <li>Introdução ao Universo WebGIS</li>
+            <li>O início da Prática</li>
+            <li>Fundamentos de Bancos de Dados Geoespaciais</li>
+            <li>Containers e APIs Geo</li>
+            <li>Introdução ao HTML, CSS e JAVASCRIPT</li>
+            <li>Criando a interface com Cursor e React</li>
+            <li>MapViewer Completo</li>
+          </ul>
+        </div>
+
+        <!-- MÓDULO 7 -->
+        <div class="module-card">
+          <div class="card-accent-bar"></div>
+          <div class="card-header">
+            <div class="module-number">07</div>
+            <h3 class="module-title">MapViewer Completo</h3>
+            <p class="module-desc">Desenvolva e realize o deploy de um visualizador de mapas avançado, unindo frontend moderno e banco de dados.</p>
+          </div>
+          <ul class="topic-list">
+            <li>Construindo seu primeiro WebGIS</li>
+            <li>Introdução ao Universo WebGIS</li>
+            <li>O início da Prática</li>
+            <li>Fundamentos de Bancos de Dados Geoespaciais</li>
+            <li>Containers e APIs Geo</li>
+            <li>Introdução ao HTML, CSS e JAVASCRIPT</li>
+            <li>Criando a interface com Cursor e React</li>
+            <li>MapViewer Completo</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       EXTRAS SECTION
+  ═══════════════════════════════════════════════ -->
+  <section class="extras-section" id="extras">
+    <div class="container">
+      <div class="section-tag">CONTEÚDO BÔNUS</div>
+      <h2 class="section-title">Aulas Extras, Lives &amp; <span class="highlight-green">Estudos de Caso</span></h2>
+
+      <div class="extras-grid">
+
+        <!-- LIVES AMBIENTAL PRO -->
+        <div class="extra-card">
+          <div class="extra-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="18" stroke="#4ade80" stroke-width="1.5"/>
+              <circle cx="20" cy="20" r="6" fill="#4ade80" opacity="0.8"/>
+              <circle cx="20" cy="20" r="12" stroke="#4ade80" stroke-width="1" opacity="0.4"/>
+              <line x1="20" y1="2" x2="20" y2="8" stroke="#4ade80" stroke-width="1.5"/>
+              <line x1="20" y1="32" x2="20" y2="38" stroke="#4ade80" stroke-width="1.5"/>
+              <line x1="2" y1="20" x2="8" y2="20" stroke="#4ade80" stroke-width="1.5"/>
+              <line x1="32" y1="20" x2="38" y2="20" stroke="#4ade80" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h4 class="extra-title">Lives Ambiental Pro</h4>
+          <ul class="topic-list">
+            <li>Por trás do desenvolvimento do CAR Viewer</li>
+            <li>Começando do zero no 1º WebGIS</li>
+            <li>Integração Banco de Dados e WebGIS</li>
+          </ul>
+        </div>
+
+        <!-- REVISÃO PYTHON & DASHBOARDS -->
+        <div class="extra-card">
+          <div class="extra-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="8" width="32" height="24" rx="3" stroke="#4ade80" stroke-width="1.5"/>
+              <polyline points="8,28 14,20 20,24 26,14 32,18" stroke="#4ade80" stroke-width="1.5" fill="none"/>
+              <circle cx="14" cy="20" r="2" fill="#4ade80"/>
+              <circle cx="20" cy="24" r="2" fill="#4ade80"/>
+              <circle cx="26" cy="14" r="2" fill="#4ade80"/>
+            </svg>
+          </div>
+          <h4 class="extra-title">Revisão Python &amp; Dashboards</h4>
+          <ul class="topic-list">
+            <li>Preparação do ambiente</li>
+            <li>Tabelas e resumo estatístico</li>
+            <li>Gráficos interativos</li>
+            <li>Mapas e processamento de dados</li>
+            <li>Design final do dashboard</li>
+          </ul>
+        </div>
+
+        <!-- GOOGLE EARTH ENGINE -->
+        <div class="extra-card">
+          <div class="extra-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="16" stroke="#4ade80" stroke-width="1.5"/>
+              <ellipse cx="20" cy="20" rx="8" ry="16" stroke="#4ade80" stroke-width="1" opacity="0.6"/>
+              <line x1="4" y1="20" x2="36" y2="20" stroke="#4ade80" stroke-width="1" opacity="0.6"/>
+              <path d="M 6 14 Q 20 17 34 14" stroke="#4ade80" stroke-width="1" opacity="0.4" fill="none"/>
+              <path d="M 6 26 Q 20 23 34 26" stroke="#4ade80" stroke-width="1" opacity="0.4" fill="none"/>
+            </svg>
+          </div>
+          <h4 class="extra-title">Google Earth Engine Descomplicado</h4>
+          <ul class="topic-list">
+            <li>Funcionalidades e vantagens do GEE</li>
+            <li>Coleção de imagens e filtros de nuvem</li>
+            <li>Índices espectrais e amostragem</li>
+            <li>Algoritmos de classificação</li>
+            <li>Validação e exportação de dados</li>
+            <li>Deploy no Streamlit</li>
+          </ul>
+        </div>
+
+        <!-- WEBGIS AVANÇADO -->
+        <div class="extra-card extra-card-wide">
+          <div class="extra-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="6" width="34" height="28" rx="2" stroke="#4ade80" stroke-width="1.5"/>
+              <line x1="3" y1="14" x2="37" y2="14" stroke="#4ade80" stroke-width="1" opacity="0.5"/>
+              <circle cx="8" cy="10" r="1.5" fill="#4ade80" opacity="0.7"/>
+              <circle cx="13" cy="10" r="1.5" fill="#4ade80" opacity="0.5"/>
+              <circle cx="18" cy="10" r="1.5" fill="#4ade80" opacity="0.3"/>
+              <polyline points="8,30 12,22 17,26 22,18 27,22 32,16" stroke="#4ade80" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <h4 class="extra-title">WebGIS Avançado para Desenvolvedores</h4>
+          <div class="extra-topics-grid">
+            <ul class="topic-list">
+              <li>Fundamentos e arquitetura WebGIS</li>
+              <li>Leaflet.js e OpenLayers na prática</li>
+              <li>Análise espacial e visualização</li>
+              <li>Chart.js, D3.js e Plotly/Dash</li>
+              <li>Flask e Django / GeoDjango</li>
+            </ul>
+            <ul class="topic-list">
+              <li>PostgreSQL + PostGIS avançado</li>
+              <li>APIs para geoprocessamento</li>
+              <li>Automação e ETL geoespacial</li>
+              <li>Heatmaps, clusterização e 3D</li>
+              <li>Deploy e manutenção em nuvem</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       CTA SECTION
+  ═══════════════════════════════════════════════ -->
+  <section class="cta-section" id="ementa">
+    <div class="container">
+      <div class="cta-box">
+        <div class="cta-glow"></div>
+        <div class="section-tag">PRÓXIMO PASSO</div>
+        <h2 class="cta-title">Pronto para dominar o <span class="highlight-cyan">WebGIS</span>?</h2>
+        <p class="cta-desc">Acesse a ementa completa, conheça todos os detalhes da formação e comece sua jornada no universo das aplicações geoespaciais.</p>
+        <div class="cta-buttons">
+          <a href="https://api.whatsapp.com/send?phone=5521988374133&text=Quero%20ser%20atendido(a)%20pela%20equipe%20Ambiental%20Pro" target="_blank" class="btn-primary btn-large">Quero me Inscrever</a>
+          <a href="#modulos" class="btn-outline">Ver Módulos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="gradient-bar"></div>
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <img src="logo-f2w.png" alt="Formação 2W Logo" style="height: 60px; width: auto;" />
+      </div>
+      <p class="footer-tagline">WebGIS &amp; WebApps — Do dado ao deploy.</p>
+      <p class="footer-copy">&copy; 2025 Formação 2W. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
