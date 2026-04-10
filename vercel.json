@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/landing/formacao2w/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/landing/formacao2w/$1"
+    }
+  ]
+}
